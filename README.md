@@ -25,3 +25,13 @@ colnames(cts_house)
 #> [4] "district"         "trump_score"      "trump_margin"    
 #> [7] "predicted_score"  "trump_plus_minus"
 ```
+
+You can also donwload the information about every vote cast by each congressperson with the `get_votes()` function.
+
+```r
+votes_both <- get_votes()
+colnames(votes_both)
+[1] "name"                 "date"                 "measure"             
+[4] "trump_position"       "vote"                 "agreement_likelihood"
+[7] "plus_minus"
+```

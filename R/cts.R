@@ -117,7 +117,8 @@ get_cts <- function(chamber = "both") {
   return(data)
 }
 
-#' Get the vote data for each congressperson
+#' Get the vote data for each congressperson. Currently this function
+#' ignores URLs that can't be accessed without warning.
 #' 
 #' @param chamber Chamber from which to get the information. Can assume
 #' one of 3 values: `house`, `senate`, or `both`.
@@ -159,7 +160,6 @@ get_votes <- function(chamber = "both", progress = TRUE) {
   
   # Loop over the urls and get each congressperson's votes
   data <- tibble::tibble()
-  error_count <- 0
   pb <- utils::txtProgressBar(style = 3)
   for (i in 1:length(links)) {
     
@@ -173,29 +173,20 @@ get_votes <- function(chamber = "both", progress = TRUE) {
       
       dplyr::bind_rows(data, tmp)
       },
-      error = function(cond) {
-        error_count <- error_count + 1
-        return(data)
-      },
-      warning = function(cond) {
-        error_count <- error_count + 1
-        return(data)
-      })
+      error = function(cond) {return(data)}
+    )
     
     if (progress) {utils::setTxtProgressBar(pb, i/length(links))}
   }
   
   # Convert some variables into decimals
+  options(warn = -1)
   data <- data %>%
     dplyr::mutate(
       agreement_likelihood = as.numeric(stringr::str_replace_all(agreement_likelihood, "\\%", ""))/100,
       plus_minus = as.numeric(plus_minus)/100
     )
-  
-  # Warn about skipped urls
-  if (error_count > 0) {
-    message(paste0("Warning: couldn't reach ", error_count, " URLs; they were skipped"))
-  }
+  options(warn = 0)
   
   return(data)
 }
