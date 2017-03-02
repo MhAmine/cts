@@ -2,4 +2,5 @@
 
 export("%>%")
 export(get_cts)
+export(get_votes)
 importFrom(magrittr,"%>%")
