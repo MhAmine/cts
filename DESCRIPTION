@@ -1,0 +1,22 @@
+Package: cts
+Title: A package to download FiveThirtyEight's "Trump Score" data
+Version: 0.0.1
+Authors@R: person("Caio", "Lente", email = "me@ctlente.com", role = c("aut", "cre"))
+Description:
+  This is a simple web scraper that donwloads the "Congress Trump Score" dataset
+  available at [Tracking Congress In The Age Of
+  Trump](https://projects.fivethirtyeight.com/congress-trump-score/), maintained by
+  FiveThirtyEight.
+Depends: R (>= 3.3.2)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+  xml2,
+  rvest,
+  dplyr,
+  tibble,
+  magrittr,
+  tidyr,
+  stringr
+RoxygenNote: 6.0.1
