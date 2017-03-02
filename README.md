@@ -31,7 +31,8 @@ You can also donwload the information about every vote cast by each congresspers
 ```r
 votes_both <- get_votes()
 colnames(votes_both)
-#> [1] "name"                 "date"                 "measure"             
-#> [4] "trump_position"       "vote"                 "agreement_likelihood"
-#> [7] "plus_minus"
+#> [1] "name"                 "date"                
+#> [3] "measure"              "trump_position"      
+#> [5] "vote"                 "agreement_likelihood"
+#> [7] "plus_minus" 
 ```
