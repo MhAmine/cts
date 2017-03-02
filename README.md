@@ -21,7 +21,7 @@ If you want to restrict the scraping to only one chamber of Congress, simply use
 ```r
 cts_house <- get_cts(chamber = "house")
 colnames(cts_house)
-[1] "name"             "party"            "state"           
-[4] "district"         "trump_score"      "trump_margin"    
-[7] "predicted_score"  "trump_plus_minus"
+#> [1] "name"             "party"            "state"           
+#> [4] "district"         "trump_score"      "trump_margin"    
+#> [7] "predicted_score"  "trump_plus_minus"
 ```
