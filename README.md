@@ -4,6 +4,12 @@ This is a simple web scraper that donwloads the "Congress Trump Score" dataset
 available at [Tracking Congress In The Age Of Trump](https://projects.fivethirtyeight.com/congress-trump-score/),
 maintained by [FiveThirtyEight](https://fivethirtyeight.com/).
 
+You can donwload `cts` by runnning
+
+```r
+devtools::install_github("ctlente/cts")
+```
+
 ### Usage
 
 To download the data, run the `get_cts()` function.
