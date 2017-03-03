@@ -22,4 +22,5 @@ Imports:
 Collate:
   'table.R'
   'get.R'
+  'data.R'
 RoxygenNote: 6.0.1
