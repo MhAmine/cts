@@ -1,6 +1,6 @@
 Package: cts
 Title: A package to download FiveThirtyEight's "Trump Score" data
-Version: 0.0.1
+Version: 0.1.0.9000
 Authors@R: person("Caio", "Lente", email = "me@ctlente.com", role = c("aut", "cre"))
 Description:
   This is a simple web scraper that donwloads the "Congress Trump Score" dataset
@@ -19,4 +19,7 @@ Imports:
   magrittr,
   tidyr,
   stringr
+Collate:
+  'table.R'
+  'get.R'
 RoxygenNote: 6.0.1
